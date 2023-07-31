@@ -31,3 +31,5 @@
 /config/master.key
 node_modules
 
+# Ignore the database configuration file.
+config/database.yml
