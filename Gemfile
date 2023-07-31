@@ -71,6 +71,6 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'devise'
 gem 'letter_opener', '~> 1.8', '>= 1.8.1'
+gem 'rubocop', '>= 1.0', '< 2.0'
