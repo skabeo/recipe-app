@@ -32,4 +32,4 @@
 node_modules
 
 # Ignore the database configuration file.
-/config/database.yml
+config/database.yml
