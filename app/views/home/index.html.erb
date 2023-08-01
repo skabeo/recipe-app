@@ -1,9 +1,39 @@
+<div class='navigation-container'>
+  <h3>Recipe App</h3>
+  <div class='name-action'>
+    <div><%= @user_name %></div>
+    <% if user_signed_in? %>
+      <%= link_to "Edit Profile", edit_user_registration_path %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'in-out' %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
+  </div>
+</div>
+
+<div class='intro-message'>
+  <p><strong>Welcome to the Recipe App 🍔</strong></p>
+
+  <p>Are you passionate about cooking and love sharing your culinary creations with others? Look no further! The Recipe App is a platform dedicated to food enthusiasts like you, where you can showcase your favorite recipes and delight foodies from all around the world</p>
+
+  <p>Whether you're an aspiring home chef, a seasoned cook, or just someone who loves experimenting in the kitchen, this is the perfect place to share your culinary masterpieces. From mouthwatering main courses to delectable desserts, we invite you to bring your kitchen creations to life and let others savor the flavors you've perfected.</p>
+
+  <p>Join us on this delightful gastronomic adventure and help the world enjoy your recipe! Happy cooking!<p>
+</div>
+
+
 <% if user_signed_in? %>
- <div> Welcome <%= current_user.email %> </div>
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %>
+  <button type="button" id="openModalButton">
+    Explore
+  </button>
 <% end %>
 
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="modal" id="myModal">
+  <div class="modal-content">
+    <span class="close" id="closeModalButton">&times;</span>
+    <p><strong>What are we cooking?</strong></p>
+    <p class='top-gap'><%= link_to 'Add food', foods_path %></p>
+    <p class='small-gap'><%= link_to 'Add recipe', recipes_path %></p>
+    <p class='small-gap'><%= link_to 'View public recipes', public_recipes_path %></p>
+  </div>
+</div>
