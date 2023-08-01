@@ -196,3 +196,8 @@ body {
 .food-table thead {
   background-color: unset;
 }
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
