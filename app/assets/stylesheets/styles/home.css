@@ -125,3 +125,79 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* Food styles */
+.center-text {
+  text-align: center;
+  font-size: 24px;
+}
+.add-food-btn-container{
+  margin-bottom: 20px;
+}
+
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adder {
+  float:right;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-primary{
+  background-color: inherit;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.btn-primary:hover{
+  background-color: #286090;
+  color:#ffffff;
+  border-radius: 4px;
+}
+
+.food-table th,
+.food-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.food-cell {
+  font-size: 16px;
+}
+
+.btn-danger {
+  background-color: inherit;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.btn-danger:hover{
+  background-color: #ff0000;
+  color:#ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+
+}
+
+.food-table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.food-table thead {
+  background-color: unset;
+}
+
+
