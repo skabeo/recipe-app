@@ -38,10 +38,6 @@ body {
 
 /* forms */
 
-.center-text {
-  text-align: center;
-}
-
 .edit-form-container {
   display: flex;
   flex-direction: column;
@@ -131,7 +127,8 @@ body {
   text-align: center;
   font-size: 24px;
 }
-.add-food-btn-container{
+
+.add-food-btn-container {
   margin-bottom: 20px;
 }
 
@@ -141,12 +138,12 @@ body {
 }
 
 .adder {
-  float:right;
+  float: right;
   text-decoration: none;
   color: inherit;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: inherit;
   padding: 5px 10px;
   cursor: pointer;
@@ -157,9 +154,9 @@ body {
   -o-border-radius: 4px;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
   background-color: #286090;
-  color:#ffffff;
+  color: #fff;
   border-radius: 4px;
 }
 
@@ -184,12 +181,12 @@ body {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
-.btn-danger:hover{
-  background-color: #ff0000;
-  color:#ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 4px;
 
+.btn-danger:hover {
+  background-color: #f00;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
 }
 
 .food-table tr:nth-child(odd) {
@@ -199,5 +196,3 @@ body {
 .food-table thead {
   background-color: unset;
 }
-
-
