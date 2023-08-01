@@ -1,0 +1,27 @@
+<div class="edit-form-container">
+  <%= form_with(model: @food, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "title-input", required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :measurement_unit %>
+      <%= form.text_field :measurement_unit, class: "title-input", required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.number_field :price, class: "title-input", required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, class: "title-input", required: true %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Save Food", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
