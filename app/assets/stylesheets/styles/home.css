@@ -25,6 +25,13 @@ body {
   border: 1px solid;
   background-color: white;
   cursor: pointer;
+  transition: all 0.15s;
+}
+
+.in-out:hover {
+  opacity: 0.7;
+  color: white;
+  background-color: #286090;
 }
 
 .intro-message {
