@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Flex:wght@300;400;500;600;700&family=Roboto+Serif:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 30px 0;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  height: 90vh;
+}
+
+@media (min-width: 2001px) {
+  body {
+    width: 50%;
+  }
+
+  .intro-message {
+    width: 50%;
+  }
+}
