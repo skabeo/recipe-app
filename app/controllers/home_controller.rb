@@ -3,15 +3,9 @@ class HomeController < ApplicationController
 
   def index
     @user_name = if user_signed_in?
-                   extract_user_name(current_user.email)
+                   current_user.name
                  else
                    'Guest'
                  end
-  end
-
-  private
-
-  def extract_user_name(email)
-    email.split('@').first.capitalize
   end
 end
