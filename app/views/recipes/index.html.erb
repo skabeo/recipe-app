@@ -1,2 +1,16 @@
-<h1>Recipes of a user goes here</h1>
-<%= link_to 'Back', root_path %>
+<div class='recipe-container'>
+  <h1 class='center-text'>My recipes</h1>
+  <%= link_to 'Back', root_path %>
+  <% @recipes.each do |recipe| %>
+    <div class='each-recipe-container'>
+      <div class='name-remove'>
+        <h4><%= recipe.name %></h4>
+        <%= button_to "Remove", recipe_path(recipe.id ), :method => :delete, class: "in-out top-gap" %> 
+      </div>
+      <p><%= recipe.description %></p>
+    </div>
+  <% end %>
+  <button class='add-recipe'>
+    <%= link_to 'Add a recipe',  new_recipe_path, class: 'a-tag' %>
+  </button>
+</div>
