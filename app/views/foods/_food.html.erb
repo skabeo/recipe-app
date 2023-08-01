@@ -1,0 +1,11 @@
+<tr>
+  <td class="food-cell"><%= food.name %></td>
+  <td class="food-cell"><%= food.measurement_unit %></td>
+  <td class="food-cell">$<%= food.price %></td>
+  <td class="food-cell"><%= food.quantity %></td>
+  <td>
+    <%= form_with(model: food, url: food_path(food), method: :delete, data: { confirm: 'Are you sure you want to delete this food?' }) do |form| %>
+      <%= form.submit 'Delete', class: 'btn btn-danger' %>
+    <% end %>
+  </td>
+</tr>

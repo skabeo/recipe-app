@@ -1,2 +1,17 @@
-<h1>All foods by a user goes here</h1>
+<div class="add-food-btn-container"><%= link_to 'Add food', new_food_path, class: 'btn btn-primary adder'%></div>
+<table class="food-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Measurement Unit</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'food', collection: @foods %>
+  </tbody>
+</table>
+
 <%= link_to 'Back', root_path %>
