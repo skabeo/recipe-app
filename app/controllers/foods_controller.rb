@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @foods = Food.all
   end
@@ -16,9 +18,9 @@ class FoodsController < ApplicationController
     @food.user = current_user
 
     if @food.save
-      # redirect_to foods_path, notice: 'Food added succesfully'
-      flash[:notice] = 'Food added successfully!'
-      redirect_to foods_path
+      redirect_to foods_path, notice: 'Food added succesfully'
+      # flash[:notice] = 'Food added successfully!'
+      # redirect_to foods_path
     else
       render :new
     end
