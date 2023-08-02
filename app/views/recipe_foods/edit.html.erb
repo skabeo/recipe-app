@@ -1,0 +1,20 @@
+<h2 class='center-text'>Edit ingredient</h2>
+<%= link_to 'Back', recipe_path(params[:recipe_id]) %>
+
+<div class="edit-form-container">
+  <%= form_with url: recipe_recipe_food_path, method: :patch, scope: :edit_recipe_food do |form| %>
+    <div class='field'>
+      <%= form.label :food, class:"form-label" %><br>
+      <%= form.select :food_id, current_user.foods.collect {|food| [food.name, food.id]},{ include_blank: true}, required: true, class: 'title-input' %>
+    </div>
+
+    <div class='field'>
+      <%= form.label :quantity, class:"form-label" %><br>
+      <%= form.number_field :quantity, required: true, placeholder: '1',  min: 1, class: 'title-input' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Update", class: "in-out" %>
+    </div>
+  <% end %>
+</div>
