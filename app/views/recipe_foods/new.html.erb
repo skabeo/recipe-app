@@ -1,6 +1,8 @@
-<h3 class='center-b'>Add ingredient</h3>
-<%= link_to 'Back', recipe_path(params[:recipe_id]) %>
+<%= link_to recipe_path(params[:recipe_id]) do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+<% end %>
 
+<h3 class='center-b'>Add ingredient</h3>
 <div class='edit-form-container'>
   <%= form_with url: recipe_recipe_foods_path, scope: :recipe_food do |form| %>
     <div class='field'>
