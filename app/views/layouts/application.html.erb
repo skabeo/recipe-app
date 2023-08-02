@@ -3,6 +3,7 @@
   <head>
     <title>RecipeApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,8 +12,19 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <% if notice.present? %>
+    <div class='notice'>
+      <p><%= notice %></p>
+      <span class="close-btn" onclick="this.parentElement.style.display='none'">&times;</span>
+    </div>
+  <% end %>
+
+  <% if alert.present? %>
+    <div class='alert'>
+      <p><%= alert %></p>
+      <span class="close-btn" onclick="this.parentElement.style.display='none'">&times;</span>
+    </div>
+  <% end %>
 
     <%= yield %>
   </body>

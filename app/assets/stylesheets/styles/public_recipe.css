@@ -1,7 +1,3 @@
-.recipe-container {
-  min-height: 90vh;
-}
-
 .each-recipe-container {
   display: flex;
   align-items: flex-start;

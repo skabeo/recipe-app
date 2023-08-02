@@ -1,12 +1,9 @@
-<% if flash[:success] %>
-  <div class="success center-b">
-    <%= flash[:success] %>
-  </div>
+<%= link_to root_path do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
 <% end %>
 
-<div class='recipe-container'>
+<div>
   <h1 class='center-text'>Recipes</h1>
-  <%= link_to 'Back', root_path %>
   <% if @recipes.empty? %>
     <p class='center-b top-gap'><strong>No recipe added</strong></p>
   <% else %>

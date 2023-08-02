@@ -1,5 +1,8 @@
-<h1 class="center-text">Public recipes</h1>
-<%= link_to 'Back', root_path %>
+<%= link_to root_path do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+<% end %>
+
+<h3 class="center-text">Public recipes</h3>
 
 <div class="recipe-container">
   <%= render partial: 'recipe', collection: @public_recipes %>

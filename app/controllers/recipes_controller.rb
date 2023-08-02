@@ -15,11 +15,11 @@ class RecipesController < ApplicationController
 
   def create
     @new_recipe = current_user.recipes.new(recipe_params)
-    if @new_recipe.save!
-      flash[:success] = 'Recipe added'
+    if @new_recipe.save
+      flash[:notice] = 'Recipe added'
       redirect_to recipes_path
     else
-      flash.now[:error] = 'Recipe not saved'
+      flash[:alert] = 'Kindly fill all fields'
       redirect_to new_recipe_path
     end
   end
@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
       end
       redirect_to recipes_path
     else
-      flash[:notice] = "Sorry you can't update recipe status"
+      flash[:alert] = "Sorry you can't update recipe status"
       redirect_to recipe_path(param[:id])
     end
   end

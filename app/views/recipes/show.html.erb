@@ -1,5 +1,7 @@
 <div>
-  <%= link_to 'Back', recipes_path %>
+  <%= link_to recipes_path do %>
+    <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+  <% end %>
   <h3 class='center-b'><strong><%= @recipe.name %></strong></h3>
   <div class='recipe-details'>
     <div>
@@ -22,9 +24,9 @@
     </div>
   </div>
   <div class='details-btn-container'>
-     <button class='in-out det-btns'>Generate shopping List</button>
+     <button class='in-out generate'>Generate shopping List</button>
      <% if can? :destroy, @recipe %>
-      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'in-out det-btns a-tag' %>  
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'in-out a-tag' %>  
      <% end %>
   </div>
   <hr class='horizontal'></hr>

@@ -1,4 +1,9 @@
-<div class="add-food-btn-container"><%= link_to 'Add food', new_food_path, class: 'btn btn-primary adder'%></div>
+<div class='home-index'>
+  <%= link_to root_path do %>
+    <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+  <% end %>
+  <div><%= link_to 'Add food', new_food_path, class: 'in-out a-tag'%></div>
+</div>
 <table class="food-table">
   <thead>
     <tr>
@@ -13,5 +18,3 @@
     <%= render partial: 'food', collection: @foods %>
   </tbody>
 </table>
-
-<%= link_to 'Back', root_path %>

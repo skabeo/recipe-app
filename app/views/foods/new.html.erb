@@ -1,7 +1,9 @@
+<%= link_to foods_path do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+<% end %>
+
 <div class="intro-message">
   <h1 class="center-text">Add a New Food</h1>
 
   <%= render 'form' %>
-
-  <%= link_to 'Back', foods_path %>
 </div>

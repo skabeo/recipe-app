@@ -4,28 +4,31 @@
   </div>
 <% end %>
 
+<%= link_to recipes_path do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+<% end %>
+
 <h2 class='center-text'>Add a recipe</h2>
-<%= link_to 'Back', recipes_path %>
 <div class='edit-form-container'>
   <%= form_with(model: @recipe, local: true) do |form| %>
     <div class="field">
       <%= form.label :name %>
-      <%= form.text_field :name, class: "title-input", placeholder: 'Enter recipe name here...', required: true %>
+      <%= form.text_field :name, class: "title-input", placeholder: 'Enter recipe name here...' %>
     </div>
 
     <div class="field">
       <%= form.label :preparation_time %>
-      <%= form.text_field :preparation_time, class: "title-input", placeholder: 'eg: 1 hour', required: true %>
+      <%= form.text_field :preparation_time, class: "title-input", placeholder: 'eg: 1 hour' %>
     </div>
 
     <div class="field">
       <%= form.label :cooking_time %>
-      <%= form.text_field :cooking_time, class: "title-input", placeholder: 'eg: 30 mins', required: true %>
+      <%= form.text_field :cooking_time, class: "title-input", placeholder: 'eg: 30 mins' %>
     </div>
 
     <div class="field">
       <%= form.label :description %>
-      <%= form.text_area :description, class: "text-area", required: true %>
+      <%= form.text_area :description, class: "text-area" %>
     </div>
 
     <div class="actions">
