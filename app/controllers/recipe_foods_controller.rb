@@ -1,4 +1,5 @@
 class RecipeFoodsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @recipe_food = RecipeFood.new
     @recipe_id = params[:recipe_id]
@@ -11,7 +12,7 @@ class RecipeFoodsController < ApplicationController
       flash[:notice] = 'Food saved'
       redirect_to recipe_path(params[:recipe_id])
     else
-      flash[:notice] = 'Food not saved'
+      flash[:alert] = 'Food not saved'
       redirect_to new_recipe_recipe_food_path
     end
   end
