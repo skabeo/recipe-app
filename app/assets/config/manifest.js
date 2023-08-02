@@ -5,3 +5,4 @@
 //= link styles/home.css
 //= link styles/recipe.css
 //= link styles/ingredient.css
+//= link styles/public_recipe.css
