@@ -12,8 +12,8 @@ body {
   position: fixed;
   bottom: 10%;
   right: 10%;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   padding: 3px;
   font-family: inherit;
   border: 2px solid;
@@ -36,6 +36,7 @@ body {
   padding: 20px 20px;
   border: 2px solid;
   margin-bottom: 30px;
+  box-sizing: border-box;
 }
 
 .name-remove {
@@ -50,6 +51,19 @@ body {
   font-family: inherit;
 }
 
+.success {
+  color: green;
+}
+
+.center-b {
+  text-align: center;
+}
+
+.notification {
+  font-size: 40px;
+  cursor: pointer;
+}
+
 @media (min-width: 2001px) {
   .name-remove {
     width: 30%;
@@ -58,4 +72,56 @@ body {
   .add-recipe {
     right: 27%;
   }
+}
+
+/* recipe-details */
+
+.recipe-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.details-btn-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.det-btns {
+  border: 2px solid;
+  border-radius: 2px;
+  padding: 3px 8px;
+  box-sizing: border-box;
+}
+
+.horizontal {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+.small-lock {
+  width: 20px;
 }

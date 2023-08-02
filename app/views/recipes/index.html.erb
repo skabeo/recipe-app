@@ -1,14 +1,32 @@
+<% if flash[:success] %>
+  <div class="success center-b">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
 <div class='recipe-container'>
-  <h1 class='center-text'>My recipes</h1>
+  <h1 class='center-text'>Recipes</h1>
   <%= link_to 'Back', root_path %>
-  <% @recipes.each do |recipe| %>
-    <div class='each-recipe-container'>
-      <div class='name-remove'>
-        <h4><%= recipe.name %></h4>
-        <%= button_to "Remove", recipe_path(recipe.id ), :method => :delete, class: "in-out top-gap" %> 
+  <% if @recipes.empty? %>
+    <p class='center-b top-gap'><strong>No recipe added</strong></p>
+  <% else %>
+    <% @recipes.each do |recipe| %>
+      <div class='each-recipe-container'>
+        <div class='name-remove'>
+          <% if recipe.user_id == current_user.id || recipe.public %>
+            <a class='a-tag' href='/recipes/<%= recipe.id %>'><h4><%= recipe.name %></h4></a>
+          <% else %>
+            <h4><%= recipe.name %></h4>
+            <%= image_tag 'lock.png', alt: 'lock', class: 'small-lock' %>
+            <p></p>
+          <% end %>
+          <% if can? :destroy, recipe %>
+            <%= button_to "Remove", recipe_path(recipe.id), method: :delete, class: "in-out top-gap" %> 
+          <% end %>
+        </div>
+        <p><%= recipe.description %></p>
       </div>
-      <p><%= recipe.description %></p>
-    </div>
+    <% end %>
   <% end %>
   <button class='add-recipe'>
     <%= link_to 'Add a recipe',  new_recipe_path, class: 'a-tag' %>

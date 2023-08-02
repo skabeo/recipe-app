@@ -9,12 +9,35 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+
   def create
     @new_recipe = current_user.recipes.new(recipe_params)
     if @new_recipe.save!
-      redirect_to recipes_path, flash: { alert: 'Recipe added' }
+      flash[:success] = 'Recipe added'
+      redirect_to recipes_path
     else
-      redirect_to new_recipe_path, flash: { alert: 'Coud not save recipe' }
+      flash.now[:error] = 'Recipe not saved'
+      redirect_to new_recipe_path
+    end
+  end
+
+  def update
+    if current_user
+      @recipe = Recipe.find(params[:id])
+      if @recipe.public
+        @recipe.update(public: false)
+        flash[:notice] = 'Recipe is private'
+      else
+        @recipe.update(public: true)
+        flash[:notice] = 'Recipe is public'
+      end
+      redirect_to recipes_path
+    else
+      flash[:notice] = "Sorry you can't update recipe status"
+      redirect_to recipe_path(param[:id])
     end
   end
 
