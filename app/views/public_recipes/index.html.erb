@@ -1,2 +1,7 @@
-<h1>Users can view all public recipes here</h1>
+<h1 class="center-text">Public recipes</h1>
 <%= link_to 'Back', root_path %>
+
+<div class="recipe-container">
+  <%= render partial: 'recipe', collection: @public_recipes %>
+</div>
+
