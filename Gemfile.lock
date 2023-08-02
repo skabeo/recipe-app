@@ -74,6 +74,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (1.17.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -96,6 +97,8 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.12.0)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -258,9 +261,11 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan (~> 1.9)
   capybara
   debug
   devise
+  font-awesome-rails
   importmap-rails
   jbuilder
   letter_opener (~> 1.8, >= 1.8.1)

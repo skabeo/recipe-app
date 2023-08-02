@@ -71,6 +71,8 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'cancancan', '~> 1.9'
 gem 'devise'
+gem 'font-awesome-rails'
 gem 'letter_opener', '~> 1.8', '>= 1.8.1'
 gem 'rubocop', '>= 1.0', '< 2.0'
