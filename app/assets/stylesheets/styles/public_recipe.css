@@ -76,18 +76,6 @@
   width: 20px;
 }
 
-.toggle-icon {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.switch {
-  border: none;
-  background-color: inherit;
-  cursor: pointer;
-}
-
 .table {
   min-width: 80%;
   margin: 0 auto;
