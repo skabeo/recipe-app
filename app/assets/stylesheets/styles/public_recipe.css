@@ -25,55 +25,6 @@
 .totals p {
   margin: 5px 0;
 }
-.recipe-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 40px;
-}
-
-.toggle-icon {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.switch {
-  border: none;
-  background-color: inherit;
-  cursor: pointer;
-}
-
-.details-btn-container {
-  max-width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.det-btns {
-  border: 2px solid;
-  border-radius: 2px;
-  padding: 3px 8px;
-  box-sizing: border-box;
-}
-
-.horizontal {
-  max-width: 80%;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  border: 1px solid;
-  box-sizing: border-box;
-}
-
-.small-lock {
-  width: 20px;
-}
 
 .recipe-details {
   display: flex;
@@ -123,6 +74,18 @@
 
 .small-lock {
   width: 20px;
+}
+
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
 }
 
 .table {
@@ -147,6 +110,7 @@
   background-color: #f2f2f2;
   padding: 8px 0;
 }
+
 .link-to-recipe {
   text-decoration: none;
   color: unset;
