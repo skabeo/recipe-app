@@ -4,6 +4,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.home-page-container {
+  height: 90vh;
+}
+
 .navigation-container {
   border: 3px solid;
   display: flex;
@@ -35,7 +39,7 @@ body {
 }
 
 .intro-message {
-  padding-top: 50px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -101,7 +105,7 @@ body {
 #openModalButton {
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  right: 70px;
   width: 60px;
   height: 60px;
   padding: 3px;
