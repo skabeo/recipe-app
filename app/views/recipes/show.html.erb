@@ -10,8 +10,8 @@
       <p class='top-gap'>Steps goes here..<p>
     </div>
     <div class='toggle-icon'>
-      
-      <% if current_user.id == @recipe.user.id %> 
+    
+      <% if current_user.id == @recipe.user.id %>
         <h4>Public</h4>
         <%= button_to recipe_path(@recipe.id), :method => :patch, class: 'switch' do %>
           <% if @recipe.public %>
@@ -24,12 +24,17 @@
     </div>
   </div>
   <div class='details-btn-container'>
-     <button class='in-out generate'>Generate shopping List</button>
-     <% if can? :destroy, @recipe %>
-      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'in-out a-tag' %>  
+    <% if @recipe.recipe_foods.any? %>
+      <%= link_to 'Generate shopping List', shopping_list_index_path(recipe_id: @recipe.id), class: 'in-out generate a-tag' %>
+    <% else %>
+      <%= link_to 'Generate shopping List', shopping_list_index_path, class: 'in-out generate disabled a-tag', disabled: true %>
+    <% end %>
+
+      <% if can? :destroy, @recipe %>
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'in-out a-tag' %>
      <% end %>
   </div>
-  <hr class='horizontal'></hr>
+  <hr class='horizontal'>
   <table class="table">
     <thead>
       <tr>
@@ -45,11 +50,11 @@
         <td style="width: 30%"><%= recipe_food.food.name %></th>
         <td><%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %> </td>
         <td>$<%= recipe_food.food.price*recipe_food.quantity %></td>
-        <td> 
+        <td>
           <% if can? :destroy, @recipe %>
             <div class='recipe-actions'>
               <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: 'a-tag' %>
-              <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "in-out" %> 
+              <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "in-out" %>
             </div>
           <% end %>
         </td>
