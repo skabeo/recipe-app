@@ -1,7 +1,8 @@
-.shopping-list-header{
+.shopping-list-header {
   text-align: center;
   padding: 10px;
 }
+
 .shopping-list-summary {
   display: flex;
   justify-content: space-between;
@@ -12,4 +13,3 @@
 .shopping-list-summary p {
   margin: 5px 0;
 }
-
