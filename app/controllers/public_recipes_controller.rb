@@ -1,7 +1,7 @@
 class PublicRecipesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
+    @public_recipes = Recipe.where(public: true).includes(:user, recipe_foods: :food).order(created_at: :desc)
     @food_counts = {}
     @total_prices = {}
 
