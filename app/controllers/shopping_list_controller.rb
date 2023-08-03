@@ -3,10 +3,10 @@ class ShoppingListController < ApplicationController
 
   def index
     if params[:recipe_id]
-      @recipe = Recipe.includes(recipe_foods: [:food, :recipe]).find(params[:recipe_id])
+      @recipe = Recipe.includes(recipe_foods: %i[food recipe]).find(params[:recipe_id])
       @shopping_list = calculate_shopping_list(@recipe)
     else
-      @shopping_list = []  # Set a default empty shopping list
+      @shopping_list = [] # Set a default empty shopping list
     end
   end
 
@@ -19,11 +19,11 @@ class ShoppingListController < ApplicationController
 
     recipe.recipe_foods.each do |recipe_food|
       ingredient = recipe_food.food
-      price = ingredient.price  # Assuming you have a price attribute for ingredients
+      price = ingredient.price # Assuming you have a price attribute for ingredients
       shopping_list << {
         ingredient: ingredient.name,
         quantity: recipe_food.quantity,
-        price: price
+        price:
       }
     end
 
