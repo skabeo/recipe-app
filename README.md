@@ -100,7 +100,16 @@ Once you have the files on your machine, you can view it on your browser on `htt
 rails server
 ```
 
+### Run tests
 
+To run model tests,run the following command:
+```
+rspec spec/models
+```
+To run integration tests,run the following command:
+```
+rspec spec/integrations
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a id="authors"></a>
@@ -167,6 +176,6 @@ I would like to express my gratitude to the following individuals and organizati
 
 ## 📝 License <a id="license"></a>
 
-This project is [MIT](https://github.com/0sugo/recipe-app/blob/dev/LICENSE) licensed.
+This project is [MIT](https://github.com/0sugo/recipe-app/blob/develop/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
