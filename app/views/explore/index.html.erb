@@ -1,0 +1,11 @@
+<%= link_to root_path do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+<% end %>
+
+<div class='explore-container'>
+  <h3>What are we cooking?</h3>
+  <p class='top-gap'><%= link_to 'View foods added', foods_path %></p>
+  <p class='small-gap'><%= link_to 'View all recipes', recipes_path %></p>
+  <p class='small-gap'><%= link_to 'View public recipes only', public_recipes_path %></p>
+</div>
+

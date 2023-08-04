@@ -27,12 +27,15 @@
     <% if @recipe.recipe_foods.any? %>
       <%= link_to 'Generate shopping List', shopping_list_index_path(recipe_id: @recipe.id), class: 'in-out generate a-tag' %>
     <% else %>
-      <%= link_to 'Generate shopping List', shopping_list_index_path, class: 'in-out generate disabled a-tag', disabled: true %>
+      <div class='tooltip-container'>
+        <%= link_to 'Generate shopping List', shopping_list_index_path, class: 'in-out generate disabled a-tag', disabled: true %>
+        <p class='tooltip'>No ingredient added</p>
+      </div>
     <% end %>
 
-      <% if can? :destroy, @recipe %>
+    <% if can? :destroy, @recipe %>
       <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'in-out a-tag' %>
-     <% end %>
+    <% end %>
   </div>
   <hr class='horizontal'>
   <table class="table">

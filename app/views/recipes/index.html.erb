@@ -1,4 +1,4 @@
-<%= link_to root_path do %>
+<%= link_to explore_path do %>
   <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
 <% end %>
 
@@ -14,7 +14,7 @@
             <a class='a-tag' href='/recipes/<%= recipe.id %>'><h4><%= recipe.name %></h4></a>
           <% else %>
             <h4><%= recipe.name %></h4>
-            <%= image_tag 'lock.png', alt: 'lock', class: 'small-lock' %>
+            <%= image_tag 'lock.png', alt: 'lock', class: 'small-lock top-gap' %>
             <p></p>
           <% end %>
           <% if can? :destroy, recipe %>

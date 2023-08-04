@@ -39,6 +39,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
@@ -62,5 +63,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+  Capybara.default_driver = :selenium_chrome
 end
