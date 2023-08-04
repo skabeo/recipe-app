@@ -1,0 +1,138 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+@import 'font-awesome';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Flex:wght@300;400;500;600;700&family=Roboto+Serif:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 30px 70px;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.home-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.danger {
+  transition: all 0.15s;
+}
+
+.danger:hover {
+  background-color: red;
+}
+
+.back {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 3px;
+  transition: all 0.15s;
+}
+
+.back:hover {
+  background-color: #e2dfdf;
+}
+
+.generate {
+  padding: 3px 4px;
+  font-size: 14px;
+}
+
+.notice,
+.alert {
+  padding: 0 12px;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+}
+
+.notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-color: #d6e9c6;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2dede;
+  color: #a94442;
+  border-color: #ebccd1;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding: 4px;
+  border-radius: 2px;
+  bottom: -40px;
+  left: 10px;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+}
+
+.close-btn {
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.small-text {
+  font-size: 17px;
+}
+
+@media (min-width: 2001px) {
+  body {
+    width: 50%;
+  }
+
+  .intro-message {
+    width: 50%;
+  }
+}

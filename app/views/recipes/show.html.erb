@@ -1,0 +1,68 @@
+<div>
+  <%= link_to recipes_path do %>
+    <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+  <% end %>
+  <h3 class='center-b'><strong><%= @recipe.name %></strong></h3>
+  <div class='recipe-details'>
+    <div>
+      <p>Preparation time: <%= @recipe.preparation_time %></p>
+      <p class='top-gap'>Cooking time: <%= @recipe.cooking_time %>
+      <p class='top-gap'>Steps goes here..<p>
+    </div>
+    <div class='toggle-icon'>
+    
+      <% if current_user.id == @recipe.user.id %>
+        <h4>Public</h4>
+        <%= button_to recipe_path(@recipe.id), :method => :patch, class: 'switch' do %>
+          <% if @recipe.public %>
+            <i class="fa fa-toggle-on" style="font-size:40px;color:green"></i>
+          <% else %>
+            <i class="fa fa-toggle-off" style="font-size:40px;color:green"></i>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class='details-btn-container'>
+    <% if @recipe.recipe_foods.any? %>
+      <%= link_to 'Generate shopping List', shopping_list_index_path(recipe_id: @recipe.id), class: 'in-out generate a-tag' %>
+    <% else %>
+      <div class='tooltip-container'>
+        <%= link_to 'Generate shopping List', shopping_list_index_path, class: 'in-out generate disabled a-tag', disabled: true %>
+        <p class='tooltip'>No ingredient added</p>
+      </div>
+    <% end %>
+
+    <% if can? :destroy, @recipe %>
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: 'in-out a-tag' %>
+    <% end %>
+  </div>
+  <hr class='horizontal'>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class='header1'>Food</th>
+        <th class='header1'>Quantity</th>
+        <th class='header1'>Value</th>
+        <th class='header1'>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @recipe.recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td style="width: 30%"><%= recipe_food.food.name %></th>
+        <td><%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %> </td>
+        <td>$<%= recipe_food.food.price*recipe_food.quantity %></td>
+        <td>
+          <% if can? :destroy, @recipe %>
+            <div class='recipe-actions'>
+              <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: 'a-tag' %>
+              <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), :method => :delete, class: "in-out" %>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+      <%end %>
+   </tbody>
+  </table>
+</div>

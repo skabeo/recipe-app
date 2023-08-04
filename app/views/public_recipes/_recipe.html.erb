@@ -1,0 +1,10 @@
+<div class="each-recipe-container">
+  <div class="name-remove">
+    <h2><%= link_to recipe.name, recipe_path(recipe),class:"link-to-recipe" %></h2>
+    <p class='top-gap'>By: <%= recipe.user.name %></p>
+  </div>
+  <div class="totals">
+    <p>Total food types : <%= @food_counts[recipe.id] %></p>
+    <p>Total price: <%= number_to_currency(@total_prices[recipe.id]) %></p>
+  </div>
+</div>

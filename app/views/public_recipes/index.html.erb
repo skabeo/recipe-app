@@ -1,0 +1,10 @@
+<%= link_to explore_path do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+<% end %>
+
+<h3 class="center-text">Public recipes</h3>
+
+<div class="recipe-container">
+  <%= render partial: 'recipe', collection: @public_recipes %>
+</div>
+

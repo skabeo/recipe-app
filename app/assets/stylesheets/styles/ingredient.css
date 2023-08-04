@@ -1,0 +1,29 @@
+.table {
+  min-width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: 10px 10px 40px #bebebe;
+}
+
+.table th,
+.table td {
+  width: 25%;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.header1 {
+  background-color: #f2f2f2;
+  padding: 8px 0;
+}
+
+.recipe-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}

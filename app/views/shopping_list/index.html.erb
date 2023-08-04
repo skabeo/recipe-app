@@ -1,0 +1,38 @@
+<%= link_to recipe_path(@recipe) do %>
+  <%= image_tag 'back.png', alt: 'Back', class: 'back' %>
+<% end %>
+<h3 class="shopping-list-header">Shopping List</h3>
+
+<% total_cost = 0 %>
+<% food_types = Set.new %>
+
+<% @shopping_list.each do |item| %>
+  <% total_item_cost = item[:quantity] * item[:price] %>
+  <% total_cost += total_item_cost %>
+  <% food_types.add(item[:ingredient]) %>
+<% end %>
+
+<div class="shopping-list-summary">
+  <p><strong>Amount of Food Items to Buy:</strong> <%= food_types.size %></p>
+  <p><strong>Total Value of Food Needed:</strong> $<%= sprintf("%.2f", total_cost) %></p>
+</div>
+
+<table class="table shopping-list-table">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shopping_list.each do |item| %>
+      <tr>
+        <td><%= item[:ingredient] %></td>
+        <td><%= item[:quantity] %></td>
+        <% total_item_cost = item[:quantity] * item[:price] %>
+        <td>$<%= sprintf("%.2f", total_item_cost) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<tr>
+  <td class="food-cell"><%= food.name %></td>
+  <td class="food-cell"><%= food.measurement_unit %></td>
+  <td class="food-cell">$<%= food.price %></td>
+  <%if food.measurement_unit == 'grams'%>
+    <td class="food-cell"><%= food.quantity %> grams</td>
+    <% else %>
+    <td class="food-cell"><%= food.quantity %> units</td>
+    <% end %>
+  <td>
+    <%= form_with(model: food, url: food_path(food), method: :delete, data: { confirm: 'Are you sure you want to delete this food?' }) do |form| %>
+      <%= form.submit 'Delete', class: 'in-out danger' %>
+    <% end %>
+  </td>
+</tr>
