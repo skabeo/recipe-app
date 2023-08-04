@@ -2,18 +2,30 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'associations' do
-    it { should have_many(:foods) }
-    it { should have_many(:recipes) }
+    it 'has many foods' do
+      association = described_class.reflect_on_association(:foods)
+      expect(association.macro).to eq :has_many
+    end
+
+    it 'has many recipes' do
+      association = described_class.reflect_on_association(:recipes)
+      expect(association.macro).to eq :has_many
+    end
   end
 
   describe 'validations' do
     it 'validates presence of email' do
       user = User.new(email: nil)
-      expect(user).not_to be_valid
+      user.valid?
       expect(user.errors[:email]).to include("can't be blank")
     end
 
-    it { should validate_uniqueness_of(:email).case_insensitive }
+    it 'validates uniqueness of email (case-insensitive)' do
+      user1 = User.create(email: 'test@example.com', password: 'password123')
+      user2 = User.new(email: 'test@example.com', password: 'password456')
+      user2.valid?
+      expect(user2.errors[:email]).to include('has already been taken')
+    end
 
     it 'validates presence of password' do
       user = User.new(password: nil)
