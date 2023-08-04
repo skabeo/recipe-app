@@ -7,7 +7,8 @@ RSpec.feature 'User recipe index', type: :feature do
                          email: Faker::Internet.email,
                          password: '1234567', password_confirmation: '1234567')
     @user.skip_confirmation!
-    @food = Food.create(name: 'Jollof', measurement_unit: 'pound', price: 40, quantity: 3, user_id: @user.id)
+    @food = Food.create(name: 'Jollof', measurement_unit: 'pound',
+                        price: 40, quantity: 3, user_id: @user.id)
   end
 
   scenario 'should display food name' do
