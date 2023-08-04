@@ -7,8 +7,8 @@ RSpec.feature 'User recipe show', type: :feature do
                          email: Faker::Internet.email,
                          password: '1234567', password_confirmation: '1234567')
     @user.skip_confirmation!
-    @recipe = Recipe.create(name: 'banku', preparation_time: '1 hour', cooking_time: '30 min', description: 'Corn dough 30kg',
-                            user_id: @user.id)
+    @recipe = Recipe.create(name: 'banku', preparation_time: '1 hour', cooking_time: '30 min',
+                            description: 'Corn dough 30kg', user_id: @user.id)
   end
 
   scenario 'should display recipe name' do
