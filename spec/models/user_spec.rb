@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'validates uniqueness of email (case-insensitive)' do
-      user1 = User.create(email: 'test@example.com', password: 'password123')
+      User.create(email: 'test@example.com', password: 'password123')
       user2 = User.new(email: 'test@example.com', password: 'password456')
       user2.valid?
       expect(user2.errors[:email]).to include('has already been taken')
