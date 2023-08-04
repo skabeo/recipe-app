@@ -91,7 +91,6 @@ body {
 /* modal */
 
 .explore-btn {
-  border: 1px solid red;
   width: 60px;
   height: 60px;
   display: flex;
