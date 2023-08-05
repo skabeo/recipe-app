@@ -6,20 +6,18 @@ class ShoppingListController < ApplicationController
       @recipe = Recipe.includes(recipe_foods: %i[food recipe]).find(params[:recipe_id])
       @shopping_list = calculate_shopping_list(@recipe)
     else
-      @shopping_list = [] # Set a default empty shopping list
+      @shopping_list = []
     end
   end
 
   private
 
   def calculate_shopping_list(recipe)
-    # Your logic to calculate the shopping list based on the recipe
-    # Example:
     shopping_list = []
 
     recipe.recipe_foods.each do |recipe_food|
       ingredient = recipe_food.food
-      price = ingredient.price # Assuming you have a price attribute for ingredients
+      price = ingredient.price
       shopping_list << {
         ingredient: ingredient.name,
         quantity: recipe_food.quantity,

@@ -20,8 +20,6 @@ class FoodsController < ApplicationController
 
     if @food.save
       redirect_to foods_path, notice: 'Food added succesfully'
-      # flash[:notice] = 'Food added successfully!'
-      # redirect_to foods_path
     else
       render :new
     end
