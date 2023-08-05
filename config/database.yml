@@ -61,9 +61,9 @@ test:
   <<: *default
   database: recipe_app_test
 
-  username: spectre
+  username: postgres
 
-  password: '`1q2w3e4r5t'
+  password: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -87,6 +87,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV[DATABASE_URL] %>
   database: recipe_app_production
   username: recipe_app
   password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
